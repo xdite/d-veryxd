@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>絕望網</title>
+
+		<%= stylesheet_link_tag "yui/reset-fonts-grids/reset-fonts-grids" %>
+		<%= stylesheet_link_tag "mollio-yui/mollio-yui", :media => "screen" %>
+		<%= javascript_include_tag :defaults %>
+		<%= javascript_include_tag "mollio/common" %>	
+    </head>
+
+    <body>
+        <div id="<%= yullio_page_width %>" class="<%= yullio_column_template %>">
+            <!-- #hd {{{ -->
+            <div id="hd">
+                <div id="header">
+                  <div id="site-name"> <a href="/">絕望網</a></div>
+                    <div id="search">
+                    </div>
+                    <ul id="nav">
+                    </ul>
+                </div>
+                <p> 挑戰社群紅海，這裡只有絕望 </p>
+            </div>
+            <!-- END: #hd }}} -->
+
+            <!-- #bd {{{ -->
+            <div id="bd">
+                <!-- #yui-main {{{ -->
+                <div id="yui-main">
+                    <div class="yui-b">
+                        <div id="content">
+							<%= yield %>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: #yui-main }}} -->
+
+                <!-- .yui-b {{{ -->
+				<% if yullio_column_template != 'yui-t7' %>
+                <div class="yui-b">
+                    <div id="utility">
+						<%= render :partial => "sidebar"%>
+                    </div>
+                </div>
+				<% end %>
+                <!-- END: .yui-b }}} -->
+            </div>
+            <!-- END: #bd }}} -->
+            <!-- #ft {{{ -->
+            <div id="ft">
+<p align="center"> 2008 消極絕望推廣小組。 <a href="http://blog.woixv.com/"> 紅色長角三倍速 </a>（絕望想法）、<a href="http://blog.xdite.net"> VeryXD Inc.</a> （絕望實作） </p>
+            </div>
+            </div>
+
+            <!-- END: #ft }}} -->
+        </div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3277572-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+    </body>
+</html>
+

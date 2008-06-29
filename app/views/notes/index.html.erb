@@ -1,0 +1,20 @@
+<div align="right"> <%= will_paginate(@notes)%> </div>
+<div align ="center"> <%= image_tag "des.jpg", :size =>"512x288" %> </div>
+<div align ="right"> <h1> <%= link_to '說出我的絕望 Orz', :action => 'new' %> </h1> </div>
+
+<% for note in @notes -%>
+
+<div class="featurebox">
+
+<p align ="right"><span style="font-size: 13pt; ">  </span></p>
+<p> <span style="font-size: 10pt; "> 絕望啦！我對『 <%= h note.content %> 』絕望啦！ </span> </p>
+	<p align ="right"><strong>
+    <%= link_to "#{note.nickname} 在 #{note.created_at} 發出哀嚎", note_path(note)%>
+</strong></p><p align ="right">絕望指數：<%= note.points %>
+ </p>
+</div>
+
+<% end -%>
+<div align="right"> 
+  <%= will_paginate(@notes) %>
+</div>

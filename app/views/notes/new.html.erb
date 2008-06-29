@@ -1,0 +1,9 @@
+<%= error_messages_for :note %>
+<h1>喊出你心中的絕望吧！</h1>
+<% form_for :note, :url => notes_path, :html => {:class =>"f-wrap-1"} do |f| -%>
+<%= image_tag "new_des.jpg", :style => "position:absolute; left:350px ;top:15px;"%>
+<p>暱稱 <%= f.text_field "nickname"  %> </p>
+<p>我對 <%= f.text_field "content" %> 絕望啦！</p>
+<%=  submit_tag "送出",{:class => 'f-submit'} %> </p>
+
+<% end %>

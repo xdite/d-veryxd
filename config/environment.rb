@@ -65,3 +65,5 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
 end
+ActiveSupport::CoreExtensions::Time::Conversions::DATE_FORMATS.merge!(:default => '%Y/%m/%d %l:%M %p', :event=> '%m/%d %l:%M %p')
+

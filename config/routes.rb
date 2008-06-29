@@ -2,12 +2,14 @@ ActionController::Routing::Routes.draw do |map|
   
   map.open_id_complete 'session', :controller => "sessions",:action => "create", :requirements => { :method => :get }
   map.open_id_complete_on_user '/users/add_openid', :controller => 'openids', :action => "create", :requirements => { :method => :get }
-  
+
+  map.resources :notes, :collection => { :pick => :get } 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
 
+  map.random '/random', :controller => "notes", :action => "pick"
   map.resources :users do |user|
     user.resources :openids
   end
@@ -45,7 +47,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.home '', :controller => "welcome"
+  map.home '', :controller => "notes"
   map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
